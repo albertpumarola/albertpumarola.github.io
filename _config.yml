@@ -4,11 +4,11 @@ description:      Welcome to my site.
 url:              http://albertpumarola.github.io
 #http://localhost:4000
 #http://AlbertPumarola.github.io
-disqus_shortname: APumarola
+disqus_shortname: albertpumarola
 
 # Owner/author information
 owner:
-  name:           Albert Pumarola
+  name:           albertpumarola
   avatar:         profile.png
   bio:            PhD student in Computer Vision and Deep Learning
   email:          apumarola (at) iri.upc.edu
@@ -17,7 +17,7 @@ owner:
   linkedin: AlbertPumarola
   google_scholar: 
   google_plus: 
-  github: AlbertPumarola
+  github: albertpumarola
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-53468744-1
 google_verify:
