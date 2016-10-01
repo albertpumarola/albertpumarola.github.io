@@ -2,8 +2,6 @@ title:            Albert Pumarola's site
 description:      Welcome to my site.
 # Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              https://albertpumarola.github.io
-#http://localhost:4000
-#http://AlbertPumarola.github.io
 disqus_shortname: albertpumarola
 
 # Owner/author information
