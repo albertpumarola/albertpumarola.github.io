@@ -1,16 +1,13 @@
-A Github Pages template for academic websites. This was forked (then detached) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+# Jordi Pont-Tuset's site
 
-# Instructions
+This site is based on the **[Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)** theme, a two-column responsive Jekyll theme perfect for powering your GitHub hosted blog.
 
-1. Fork this repository
-1. Rename it "yourusername.github.io"
- * Do this in the settings menu (top right, below watch/star/fork buttons)
- * Check it is running in the "Github Pages" section of the settings page.
-1. Update variables in _config.yml to match your site
- * url is especially important
-1. Update files in _pages directory to set top-level 
-1. Update/delete sample files for different kinds of collections 
- * The files for each item are in _talks, _teaching, _publications, _portfolio, and _posts for each item in these collections
- * Delete the sample files (no need to delete the directory) if you do not want a kind of collection in your site
-1. Update top menu bar (to add/remove items) by editing _data/navigation.yml
-1. Run talkmap.ipynb (must have repository cloned) to generate talkmap
+
+## License
+
+Feel free to adapt this theme to your site without linking back to me or including a disclaimer, although letting me know would be nice. ;) 
+
+## To run it locally
+```
+jekyll serve --watch --port 5000
+```
