@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="alternate" href="../../ja/publications/" hreflang="ja">
+  <link rel="alternate" href="../../publications/" hreflang="x-default">
+  <meta name="keywords" content=
+  "pumarola, albert, deep learning, computer vision, computer graphics, machine learning, artificial intelligence, IRI">
+  <meta charset="UTF-8">
+  <meta name="description" content=
+  "List of all the publications by Albert Pumarola. These works focus on Computer Vision and Deep Learning.">
+  <meta name="author" content="Albert Pumarola">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0074D9">
+  <title>Edgar Simo-Serra - Publications</title>
+  <link rel="stylesheet" type="text/css" href="../../style.css" media="screen">
+</head>
+<body>
+  <div id="page">
+    <div id="menubar">
+      <h2><a lang="en" href="../">Home</a></h2>
+      <h2><a lang="en" href="../research/">Research</a></h2>
+      <ul>
+        <li><a lang="en" href="../research/pl-slam/">PL-SLAM</a></li>
+      </ul>
+      <h2><span class="active" title="You're here.">Publications</span></h2>
+    </div>
+    <div id="main">
+      <h1 lang="en">Publications</h1>
+      <ul id="filter">
+        <li><a href="#" data-val="all" class="current"><span lang="en">All</span></a></li>
+<!--        <li><a id="top-button" href="#" data-val="top"><span lang="en">Top</span></a></li>-->
+        <li><a href="#" data-val="journal"><span lang="en">Journal</span></a></li>
+        <li><a href="#" data-val="conference"><span lang="en">Conference</span></a></li>
+<!--        <li><a href="#" data-val="thesis"><span lang="en">Thesis</span></a></li>-->
+      </ul>
+      <div class="publications">
+        <h3 class="conference"><span lang="en">2017</span></h3>
+        <ul class="publist">
+          <li class="conference">
+            <div class="details">
+              <a href="../../publications/RubioICPR2016.pdf"><img src=
+              "../../images/icpr2016/bass_tn.png" height="100" width="100" alt=
+              "Real-Time Monocular Visual SLAM with Points and Lines" class="thumb"></a>
+              <ul class="pub">
+                <li class="pubtitle">Real-Time Monocular Visual SLAM with Points and Lines</li>
+                <li class="pubauthor">Albert Pumarola, Alexander Vakhitov, Antonio Agudo, Alberto Sanfeliu and Francesc Moreno-Noguer </li>
+                <li class="pubbooktitle">IEEE International Conference on Robotics and Automation (ICRA), Singapore, 2017.</li>
+                <li>
+                  <div class="list_buttons">
+                    <a class="bibtexLink" href="../../publications/RubioICPR2016.pdf">PDF</a>
+                    <a class="bibtexLink" onclick=
+                    "return toggle('/publications/RubioICPR2016/abs',this)"><span lang=
+                    "en">abstract</span></a> <a class="bibtexLink" onclick=
+                    "return toggle('/publications/RubioICPR2016/bib',this)">bibtex</a> <a class=
+                    "bibtexLink" href="https://github.com/arubior/bass-superpixels"><span lang=
+                    "en">code</span></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div style="display: none;" class="abstractbox" id="/publications/RubioICPR2016/abs">
+              <p>We propose a new superpixel algorithm based on exploiting the boundary information
+              of an image, as objects in images can generally be described by their boundaries. Our
+              proposed approach initially estimates the boundaries and uses them to place
+              superpixel seeds in the areas in which they are more dense. Afterwards, we minimize
+              an energy function in order to expand the seeds into full superpixels. In addition to
+              standard terms such as color consistency and compactness, we propose using the
+              geodesic distance which concentrates small superpixels in regions of the image with
+              more information, while letting larger superpixels cover more homogeneous regions. By
+              both improving the initialization using the boundaries and coherency of the
+              superpixels with geodesic distances, we are able to maintain the coherency of the
+              image structure with fewer superpixels than other approaches. We show the resulting
+              algorithm to yield smaller Variation of Information metrics in seven different
+              datasets while maintaining Undersegmentation Error values similar to the
+              state-of-the-art methods.</p>
+            </div>
+            <div style="display: none;" class="bibtex" id="/publications/RubioICPR2016/bib">
+              <pre>@InProceedings{RubioICRA2015,
+   author = {Albert Pumarola and Alexander Vakhitov and Antonio Agudo and Alberto Sanfeliu and Francesc Moreno-Noguer},
+   title = {{Real-Time Monocular Visual SLAM with Points and Lines}},
+   booktitle = "Proceedings of the International Conference in Robotics and Automation (ICRA)",
+   year = 2017,
+}</pre>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script> 
+  <script>
+  window.jQuery || document.write('<script src="../../jquery.js"><\/script>')
+  </script> 
+  <script type="text/javascript">
+  $(document).ready(function() {
+   $('ul#filter a').click(function() {
+      $(this).css('outline','none');
+      $('ul#filter .current').removeClass('current');
+      $(this).addClass('current');
+
+      //var filterVal = $(this).text().toLowerCase();
+      var filterVal = $(this).data('val');
+      $('.publications').fadeOut('fast', 'easeOutQuad', function() {
+         $('.publications >h3, .publications >ul.publist >li').each(function() {
+            $(this).fadeOut(0);
+            if (filterVal=='all' || $(this).hasClass(filterVal)) {
+               $(this).fadeIn('fast', 'easeOutQuad');
+            }
+         });
+         $(this).fadeIn(0);
+      });
+      return false;
+   });
+   $('a#all').click();
+  });
+  </script> 
+  <script type="text/javascript" src="../../site.js">
+  </script> 
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-52869210-1','auto');ga('send','pageview')
+  </script> 
+  <script src="https://www.google-analytics.com/analytics.js" async defer>
+  </script>
+</body>
+</html>
