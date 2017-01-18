@@ -15,6 +15,7 @@
   <title>Albert Pumarola</title>
   <link rel="stylesheet" type="text/css" href="../style.css" media="screen">
 </head>
+<script src="scripts/include_html.js"></script>
 <body>
   <div id="page">
     <div id="menubar">
@@ -29,11 +30,10 @@
     
    </div>
     <div id="main">
-
       <div id="home">
         <div id="portrait">
           <span id="portraitimage"><img src="../images/home_img.jpg" height="400" width="300"
-          alt="Edgar Simo-Serra"></span>
+          alt="Albert Pumarola"></span>
           <div>
             <h1><span lang="en">Albert Pumarola</span></h1>
             <h2><span lang="en">PhD Student</span></h2>
@@ -60,22 +60,25 @@
                 interests are in the areas of Deep Learning and Computer Vision. In particular, his current research focuses on bridging the gap between geometry and deep learning.</p>
           </div>
         </div>
+        <div id="publications">
+            <div include-html="publications/publications.html"></div> 
+            <script> IncludeHTML();</script>
+        </div>
       </div>
     </div>
+    
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  </script> 
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
   <script>
     window.jQuery || document.write('<script src="../jquery.js"><\/script>')
   </script> 
-  <script type="text/javascript" src="../site.js">
-  </script> 
+  <script type="text/javascript" src="../site.js"></script> 
   <script>
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
     ga('create','UA-52869210-1','auto');ga('send','pageview')
   </script> 
-  <script src="https://www.google-analytics.com/analytics.js" async defer>
-  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
 </html>
