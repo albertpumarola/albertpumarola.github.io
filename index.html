@@ -46,12 +46,13 @@
           </div>
         </div>
         <div id="content">
-          <ul id="filter">
-            <li><a href="http://scholar.google.com/citations?user=2bDu3ecAAAAJ"> Google
-            Scholar</a></li>
-            <li><a href="https://github.com/bobbens"><i class="fa fa-github"></i> Github</a></li>
-            <li><a href="../cvitae_en.pdf"><span lang="en">Curriculum Vitae</span></a></li>
-          </ul>
+          <p></p>
+          <div class="list_buttons">
+<!--                <a class="bibtexLink" href="http://scholar.google.com/citations?user=2bDu3ecAAAAJ">Google Scholar</a>-->
+                <a class="bibtexLink" href="https://github.com/AlbertPumarola"><i class="fa fa-github"></i> Github</a>
+<!--                <a class="bibtexLink" href="../cv_en.pdf"><i class="fa fa-github"></i> Curriculum Vitae</a>-->
+          </div>
+            
           <div id="homebody">
             <p lang="en">Albert Pumarola is currently a first year PhD student at <a href=
             "http://www.iri.upc.edu/">IRI</a> under the supervision of <a href=
@@ -68,17 +69,38 @@
     </div>
     
   </div>
-
-  
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
   <script>
     window.jQuery || document.write('<script src="../jquery.js"><\/script>')
   </script> 
-  <script type="text/javascript" src="../site.js"></script> 
+  <script type="text/javascript" src="../site.js"></script>
   <script>
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-    ga('create','UA-52869210-1','auto');ga('send','pageview')
+    ga('create','UA-53468744-1','auto');ga('send','pageview')
   </script> 
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+   $('ul#filter a').click(function() {
+      $(this).css('outline','none');
+      $('ul#filter .current').removeClass('current');
+      $(this).addClass('current');
+
+      //var filterVal = $(this).text().toLowerCase();
+      var filterVal = $(this).data('val');
+      $('.publications').fadeOut('fast', 'easeOutQuad', function() {
+         $('.publications >h3, .publications >ul.publist >li').each(function() {
+            $(this).fadeOut(0);
+            if (filterVal=='all' || $(this).hasClass(filterVal)) {
+               $(this).fadeIn('fast', 'easeOutQuad');
+            }
+         });
+         $(this).fadeIn(0);
+      });
+      return false;
+   });
+   $('a#all').click();
+  });
+  </script> 
 </body>
 </html>
