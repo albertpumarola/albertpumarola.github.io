@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Deeplearning</title>
+
+		<meta name="description" content="Presentation of PL-SLAM: Real-Time Monocular Visual SLAM with Points and Lines">
+		<meta name="author" content="Ahmed TOUATI">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="reveal.js-3.0.0/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js-3.0.0/css/theme/white.css" id="theme">
+        
+        <link rel="stylesheet" href="reveal.js-3.0.0/css/plugin/title-footer/title-footer.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js-3.0.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.0.0/css/print/pdf.css' : 'reveal.js-3.0.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+        
+        <style>
+		
+        .reveal h1, h2, h3, h4, h5, h6 {
+            text-transform: none !important;
+        }
+		.reveal section img {
+			border :0;
+            box-shadow:none;
+		}
+		</style>
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>PL-SLAM</h1>
+                    <h3>Real-Time Monocular Visual SLAM with Points and Lines</h3>
+					<p>
+                        <small><a href="http://http://www.albertpumarola.com/">A. Pumarola</a>, <a href="https://sites.google.com/site/alexandervakhitov/">A. Vakhitov</a>, <a href="http://www.iri.upc.edu/people/aagudo/">A. Agudo</a>, <br> <a href="http://www.iri.upc.edu/people/sanfeliu/">A. Sanfeliu</a>, <a href="http://www.iri.upc.edu/people/fmoreno/">F. Moreno-Noguer</a></small>
+                        </p>
+                    <br>
+                    <img style="width: 5%;" data-src="images/UPC.png" />
+                    <img style="width: 5%;" data-src="images/IRI-circle.png" />
+                    <img style="width: 10%;" data-src="images/CSIC.png" />
+					<!-- <img width="200" height="50" data-src="reveal.js-3.0.0/images/dil.png">-->
+				</section>
+                <section>
+					<h2>Motivation</h2>
+                    <hr>
+                    <div class="fragment fade-up" style="float:left; width:33%"><img data-src="images/motivation2.jpg" /></div>
+                    <div style="float:left; width:33%"><img data-src="images/motivation1.jpg" /></div>
+                    <div class="fragment fade-up" style="float:left; width:33%"><img data-src="images/motivation3.jpg" /></div>
+				</section>
+                <section>
+					<h2>System Overview</h2>
+                    <hr>
+                    <img class="stretch" data-src="images/diagram.svg" />
+                    
+				</section>
+                <section>
+					<h2>Line-Based Map Initialization</h2>
+                    <hr>
+                    <div style="margin: 0;">
+                      <div style="width: 40%; float: left;">
+                        <br> 
+                        <img data-src="images/init.svg"/>
+                          <p align="justify"><small> 
+                              Assumption: <br>                              
+                              $R_1=R^T$, $R_2=I$, $R_3=R$ 
+                          </small></p>
+                      </div>
+                      <div style="margin-left: 42%">
+                          <p align="justify"><small> The cross product of two vectors $\textbf{l}$ will be parallel to the line $PQ$ and at the same time orthogonal to the third vector:</small></p>
+                          <p><small>$\textbf{l}_2^T (R^T\textbf{l}_1 \times R\textbf{l}_3) = 0$</small></p>
+                          <p align="justify"><small> For small rotations:</small></p>
+                          <p><small> $R = \begin{bmatrix}1 & -r_3 & r_2 \\ r_3 & 1 & -r_1 \\ -r_2 & r_1 & 1\end{bmatrix}$</small></p>
+                          <p align="justify"><small>Evaluate eight possible solutions obtained by three and keep the one that minimizes equation 1</small></p>
+                          
+                        </div>
+                    </div>
+				</section>
+                <section>
+					<h2>Line-Based Optimization</h2>
+                    <hr>                    
+                    <div style="width: 40%; float: left;">
+                         <img class="stretch" data-src="images/projection.svg" />
+                    </div>
+                    <div style="margin-left: 40%; vertical-align: middle;">
+                        <p align="left">
+                            Projection Error
+                        </p>
+                        <div style="position:relative" align="left">
+                            <small>
+                            <p align="left">$E_p(\textbf{P},\textbf{Q},\textbf{l},\theta,\textbf{K}) = \textbf{P}-\pi(\textbf{P},\theta,\textbf{K})$</p> 
+                            <p align="left" class="fragment fade-in"  data-fragment-index="0">$E_l(\textbf{P},\textbf{Q},\textbf{l},\theta,\textbf{K}) = E_{pl}^2(\textbf{P},\textbf{l},\theta,\textbf{K}) + E_{pl}^2(\textbf{Q},\textbf{l},\theta,\textbf{K})$ <br>
+                            &thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp; with $E_l(\textbf{P},\textbf{l},\theta,\textbf{K}) = l^T\pi(\textbf{P},\theta,\textbf{K})$ </p>
+                            </small>
+                        </div>
+                        <br>
+                        <p align="left">
+                                Bundle Adjustment
+                            </p>
+                           <div style="position:relative" align="left">
+                                <small>                                
+                                    <p class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">
+                                    $C - \sum_{i,j} \rho  (\textbf{E}_{i,j}^T \Omega_{i,j}^{-1} \textbf{E}_{i,j} + \textbf{E}_{i,j}^{\prime T} \Omega_{i,j}^{\prime -1} \textbf{E}_{i,j}^{\prime} + \textbf{E}_{i,j}^{\prime\prime T} \Omega_{i,j}^{\prime\prime -1} \textbf{E}_{i,j}^{\prime\prime} )$
+                                    </p>
+                                    <p class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="1">
+                                      $C - \sum_{i,j} \rho  (\textbf{E}_{i,j}^T \Omega_{i,j}^{-1} \textbf{E}_{i,j})$
+                                    </p>
+                                </small>
+                            </div>
+                    </div>
+				</section>
+                <section>
+					<h2>Line-Based Relocalization: EPnPL</h2>
+                    <hr>
+                    <img class="stretch" data-src="images/epnpl.png" />
+                    <small>
+                        $\arg\!\min_{\mu} \left \{ \left \| M_{p}\mu  \right \|^2 + E_l(\left \{\textbf{P}^i\right \},\left \{\textbf{Q}^i\right \},\left \{\textbf{l}^i\right \},\theta,\left \{\textbf{K}^i\right \})  \right \} $ 
+                    </small>
+				</section>
+                <section>
+					<h2>Demo TUM-RGBD</h2>
+                    <hr>
+                    <iframe width="560" height="315" data-src="https://www.youtube.com/embed/_1uDk8enoAQ?start=4" data-autoplay></iframe>
+				</section>
+                <section>
+					<h2>Demo TUM-RGBD</h2>
+                    <hr>
+                    <img class="stretch" data-src="images/trajError4.svg" />
+				</section>
+                <section>
+					<h2>Benchmark TUM-RGBD</h2>
+                    <hr>
+                    <img class="stretch" data-src="images/table.png" />
+				</section>
+                <section>
+					<h2>Conclusions</h2>
+                    <hr>
+                    <ul>
+                        <li>Real-Time Monocular Visual SLAM with Points and Lines</li>
+				        <li>Novel line-based map initialization approach</li>
+                        <li>State of the art improvement</li>
+				    </ul>
+                </section>
+                <section   data-background="#4d7e65"  data-background-transition="zoom">
+                    <div style="width: 40%; float: left;">
+                        <img  style="border:2px solid black; transform: rotate(-4deg);"  data-src="images/project_page.png" />
+                    </div>
+                    <div style="margin-left: 40%; vertical-align: middle;">
+                        <div style="padding: 0% 0;"></div>
+                        <div style="padding: 10% 0;">
+                            <h2>Thank You!</h2>
+                            <small>
+                                For more information vist the project webpage <br>
+                                <a href="http://www.albertpumarola.com/research/pl-slam/index.html" style="color: #ccffcc; font-size: 20px;">http://www.albertpumarola.com/research/pl-slam/index.html</a>
+                            </small>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+			
+		<script src="reveal.js-3.0.0/lib/js/head.min.js"></script>
+		<script src="reveal.js-3.0.0/js/reveal.js"></script>
+
+
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				math: {
+					mathjax: 'reveal.js-3.0.0/MathJax-master/MathJax.js',
+        			config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+    			},
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'reveal.js-3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js-3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js-3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js-3.0.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js-3.0.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js-3.0.0/plugin/notes/notes.js', async: true },
+					{ src: 'reveal.js-3.0.0/plugin/math/math.js', async: true },
+                    
+                    //{ src: 'reveal.js-3.0.0/plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(); } }
+					// { src: 'plugin/mathjax/MathJax.js', async: true}
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
