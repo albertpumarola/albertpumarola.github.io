@@ -48,7 +48,8 @@
         </div>
         <h2 id="method"><a name="method">Method</a></h2>
             <center><img src="../../../images/2018/GANimation/model.png" height="358" width="1000" alt="GANimation"></center>
-            <p>The proposed architecture consists of two main blocks: a generator $G$ to regress   attention and color masks; and a critic $D$ to evaluate the generated image in its photorealism $D_I$ and expression conditioning fulfillment $\hat{\mathbf{y}}_g$. Note that our systems does not require supervision, i.e.,  no pairs of images of the same person with different expressions, nor the target image $\mathbf{I}_{\mathbf{y}_g}$ are assumed to be known.</p>
+            <p>The proposed architecture consists of two main modules. On the one hand, a generator $G(\mathbf{I}_{\mathbf{y}_r}|\mathbf{y}_g)$ is trained to realistically transform the facial expression in image $\mathbf{I}_{\mathbf{y}_r}$ to the desired $\mathbf{y}_g$. On the other hand, we use a critic $D(\mathbf{I}_{\mathbf{y}_g})$ to evaluate the quality of the generated image as well as its expression. Note that $G$ is applied twice, first to map the input image $\mathbf{I}_{\mathbf{y}_r}\rightarrow \mathbf{I}_{\mathbf{y}_g}$, and then to render it back $\mathbf{I}_{\mathbf{y}_g}\rightarrow \hat{\mathbf{I}}_{\mathbf{y}_r}$. <br> 
+            One key ingredient of our system is to make $G$ focus only on those regions of the image that are responsible of synthesizing the novel expression and keep the rest elements of the image such as hair, glasses, hats or jewelery untouched. Concretely, instead of regressing a full image, our generator outputs two masks, a color mask $\mathbf{C}$ and attention mask $\mathbf{A}$.  </p>
         <h2 id="results">
             
         <a name="results">Results</a></h2>
