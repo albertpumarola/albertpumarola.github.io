@@ -48,7 +48,7 @@
         </div>
         <h2 id="method"><a name="method">Method</a></h2>
             <center><img src="../../../images/2018/GANimation/model.png" height="358" width="1000" alt="GANimation"></center>
-            <p>The proposed architecture consists of two main modules. On one hand, a generator $G(\mathbf{I}_{\mathbf{y}_r}|\mathbf{y}_g)$ is trained to realistically transform the facial expression in image $\mathbf{I}_{\mathbf{y}_r}$ to the desired $\mathbf{y}_g$. Note that $G$ is applied twice, first to map the input image $\mathbf{I}_{\mathbf{y}_r}\rightarrow \mathbf{I}_{\mathbf{y}_g}$, and then to render it back $\mathbf{I}_{\mathbf{y}_g}\rightarrow \hat{\mathbf{I}}_{\mathbf{y}_r}$. On the other hand, we use a WGAN-GP based critic $D(\mathbf{I}_{\mathbf{y}_g})$ to evaluate the quality of the generated image as well as its expression.</p>
+            <p>The proposed architecture consists of two main blocks: a generator $G$ to regress   attention and color masks; and a critic $D$ to evaluate the generated image in its photorealism $D_I$ and expression conditioning fulfillment $\hat{\mathbf{y}}_g$. Note that our systems does not require supervision, i.e.,  no pairs of images of the same person with different expressions, nor the target image $\mathbf{I}_{\mathbf{y}_g}$ are assumed to be known.</p>
         <h2 id="results">
             
         <a name="results">Results</a></h2>
@@ -69,7 +69,7 @@
         <div class="alert" lang="en">
             @inproceedings{pumarola2018ganimation,<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;title={{GANimation: Anatomically-aware Facial Animation from a single image}},<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;author={A. Pumarola and A. Agudo and AM. Martinez and A. Sanfeliu and F. Moreno-Noguer},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;author={A. Pumarola and A. Agudo and A.M. Martinez and A. Sanfeliu and F. Moreno-Noguer},<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;booktitle={ECCV},<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;year={2018}<br>
             }
