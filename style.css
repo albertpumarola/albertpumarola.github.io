@@ -461,6 +461,7 @@ div.langflag img {
 }
 
 #project ul.newsimages {
+    align-items: center;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -471,6 +472,7 @@ div.langflag img {
 }
 
 #project ul.newsimages > li.imagegroup {
+    align-items: center;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -481,6 +483,7 @@ div.langflag img {
 }
 
 #project ul.newsimages > li.imagegroup img {
+    align-items: center;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
