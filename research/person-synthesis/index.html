@@ -47,7 +47,7 @@
         </div>
         <h2 id="method"><a name="method">Method</a></h2>
             <center><img src="../../../images/2018/person-synthesis/model.png" height="358" width="1000" alt="person-synthesis"></center>
-            <p>The proposed architecture consists of four main components: (1) A generator $G(I|\mathbf{p})$ that acts as a differentiable render    mapping one input image of a given person under a specific pose to an output image  of the same person under a different pose. Note that $G$ is used twice in our network, first to map the input image $I_{p_o}\rightarrow I_{p_f}$ and then to render the latter back to the original pose  $I_{p_f}\rightarrow \hat{I}_{p_o}$;  (2) A regressor $\Phi$   responsible of estimating the 2D joint locations of a given image; (3)  A discriminator  $D_{\text{I}}(I)$ that seeks to discriminate between generated and real samples; (4) A loss function, computed without ground truth, that aims to preserve the person identity. For this purpose, we devise a novel loss function that enforces   semantic content similarity of $I_{p_o}$ and $\hat{I}_{p_o}$, and style similarity between $I_{p_o}$ and $I_{p_f}$.</p>
+            <p>The proposed model consists of four main components: (1) A generator $G(I|\mathbf{p})$ that acts as a differentiable render    mapping one input image of a given person under a specific pose to an output image  of the same person under a different pose. Note that $G$ is used twice in our network, first to map the input image $I_{p_o}\rightarrow I_{p_f}$ and then to render the latter back to the original pose  $I_{p_f}\rightarrow \hat{I}_{p_o}$;  (2) A regressor $\Phi$   responsible of estimating the 2D joint locations of a given image; (3)  A discriminator  $D_{\text{I}}(I)$ that seeks to discriminate between generated and real samples; (4) A loss function, computed without ground truth, that aims to preserve the person identity. For this purpose, we devise a novel loss function that enforces   semantic content similarity of $I_{p_o}$ and $\hat{I}_{p_o}$, and style similarity between $I_{p_o}$ and $I_{p_f}$.</p>
         <h2 id="results"><a name="results">Results</a></h2>
             <center><img src="../../../images/2018/person-synthesis/results.png" height="834" width="691" alt="person-synthesis"></center>
 
@@ -66,7 +66,7 @@
         <ul class="publist">
           <li class="conference">
             <div class="details">
-              <a href="../../publications/files/pumarola2018unsupervised.pdf" target="_blank"><img src=
+              <a href="https://arxiv.org/abs/1809.10280" target="_blank"><img src=
               "../../images/2018/person-synthesis/thumbnail.png" height="167" width="130" alt=
               "Unsupervised Person Image Synthesis in Arbitrary Poses" id="person-synthesis_cvpr" class="thumb"></a>
               <ul class="pub">

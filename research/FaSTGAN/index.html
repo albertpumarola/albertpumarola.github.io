@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="keywords" content=
+  "pumarola, albert, caelles, sergi, deep learning, computer vision, computer graphics, machine learning, artificial intelligence, IRI, GAN, video object segmentation, video, segmentation, davis, tracking">
+  <meta charset="UTF-8">
+  <meta name="description" content=
+  "Learning descriptive spatio-temporal object models from data is paramount for the task of semi-supervised video object segmentation. Most existing approaches mainly rely on models that estimate the segmentation mask based on a reference mask at the first frame (aided sometimes by optical flow or the previous mask). These models, however, are prone to fail under rapid appearance changes or occlusions due to their limitations in modelling the temporal component. On the other hand, very recently, other approaches learned long-term features using a convolutional LSTM to leverage the information from all previous video frames. Even though these models achieve better temporal representations, they still have to be fine-tuned for every new video sequence. In this paper, we present an intermediate solution and devise a novel GAN architecture, FaSTGAN, to learn spatio-temporal object models over finite temporal windows. To achieve this, we concentrate all the heavy computational load to the training phase with two critics that enforce spatial and temporal mask consistency over the last K frames. Then at test time, we only use a relatively light regressor, which reduces the inference time considerably. As a result, our approach combines a high resiliency to sudden geometric and photometric object changes with efficiency at test time (no need for fine-tuning nor post-processing). We demonstrate that the accuracy of our method is on par with state-of-the-art techniques on the challenging YouTube-VOS and DAVIS datasets, while running at 32 fps, about 4x faster than the closest competitor.">
+  <meta name="author" content="Albert Pumarola">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0074D9">
+  <title>Albert Pumarola - FaSTGAN</title>
+  <link rel="stylesheet" type="text/css" href="../../../style.css" media="screen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+    
+    
+    
+<body>
+  <div id="page">
+    <div id="menubar">
+      <h2><a href="../../#page" lang="en">Home</a></h2>
+      <h2><a href="../../#publications" lang="en">Publications</a></h2>
+      <h2><a href="../../#projects" lang="en">Projects</a></h2>
+    </div>
+    <div id="main">
+      <h1 lang="en">Fast video object segmentation with Spatio-Temporal GANs</h1>
+      <div id="project">
+        <div id="authors" lang="en">
+          <p><a href="https://sergicaelles.com/">Sergi Caelles*</a>, 
+              <strong>Albert Pumarola*</strong>, 
+              <a href="http://www.iri.upc.edu/people/fmoreno/">Francesc Moreno-Noguer</a>
+              <a href="http://www.iri.upc.edu/people/sanfeliu/">Alberto Sanfeliu</a>,
+              <a href="https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html">Luc Van Gool</a>
+              <br><small><i>(*Equally contributed)</i></small>
+          </p>
+        </div>
+        <center><img src="../../../images/2019/FaSTGAN/teaser.jpg" alt="FaSTGAN"> </center>
+        <div class="abstract" lang="en">
+          <p>  We present a novel GAN architecture, FaSTGAN, to learn spatio-temporal object models over finite temporal windows. To achieve this, we concentrate all the heavy computational load to the training phase with two critics that extend cross-entropy $\mathcal{L}_\text{CE}$ enforce spatial $\mathcal{L}_\text{S}$ and temporal $\mathcal{L}_\text{T}$ mask consistency over the last K frames. Then at test time, we only use a relatively light regressor, which reduces the inference time considerably.</p>
+        </div>
+        <h2 id="method"><a name="method">Method</a></h2>
+            <center><img src="../../../images/2019/FaSTGAN/model.jpg" height="363" width="1000" alt="FaSTGAN"></center>
+            <p>The proposed model consists of three main modules. A regressor $\phi$ trained on the binary segmentation task of separating the desired object from the background and two critics, $D_\text{S}$ and $D_\text{T}$, enforcing the model to produce semantically and temporally consistent estimates. At test time, we discard the critics and relay on the trained regressor $\phi$. <br> 
+            
+        <h2 id="results">
+            
+        <a name="results">Results</a></h2>
+        <center><img src="../../../images/2019/FaSTGAN/results.jpg" alt="FaSTGAN"></center>
+        <div lang="en">
+          <p>  Sample sequences from YouTube-VOS (top 2), DAVIS17 (middle 2) and DAVIS16 (bottom
+2). Leftmost image is the initial reference frame, the rest of the images are the predictions for the following frames.</p>
+        </div>
+        
+        <h2><span lang="en">BibTex</span></h2>
+        <div class="alert" lang="en">
+            @article{caelles2019fast,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;title={Fast video object segmentation with Spatio-Temporal GANs},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;author={Caelles, Sergi and Pumarola, Albert and Moreno-Noguer, Francesc and Sanfeliu, Alberto and Van Gool, Luc},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;journal={arXiv preprint arXiv:1903.12161},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;year={2019}<br>
+            }
+        </div>
+        <h2><span lang="en">Publications</span></h2>
+        <div class="publications">
+        <h3 class="conference"><span lang="en">2018</span></h3>
+        <ul class="publist">
+     
+          <li class="conference">
+            <div class="details">
+              <a href="https://arxiv.org/abs/1903.12161"><img src=
+              "../../images/2018/GANimation/thumbnail.png" height="194" width="131" alt=
+              "Fast video object segmentation with Spatio-Temporal GANs" id="FaSTGAN_arxiv" class="thumb"></a>
+              <ul class="pub">
+                <li class="pubtitle">Fast video object segmentation with Spatio-Temporal GANs</li>
+                  <li class="pubauthor">S. Caelles*, A. Pumarola*, F. Moreno-Noguer, A. Sanfeliu and L. Van Gool <br><small><i>(*Equally contributed)</i></small> </li> 
+                <li class="pubbooktitle">arXiv, 2019. </li> 
+                <li>
+                 <div class="list_buttons">
+                    <a class="bibtexLink" href="https://arxiv.org/abs/1903.12161" target="_blank">PDF</a>
+                    <a class="bibtexLink" onclick="return toggle('/publications/CaellesFaSTGAN2019/abs',this)"><span lang="en">Abstract</span></a>
+                    <a class="bibtexLink" onclick="return toggle('/publications/CaellesFaSTGAN2019/bib',this)">Bibtex</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div style="display: none;" class="abstractbox" id="/publications/CaellesFaSTGAN2019/abs">
+              <p>Learning descriptive spatio-temporal object models from data is paramount for the task of semi-supervised video object segmentation. Most existing approaches mainly rely on models that estimate the segmentation mask based on a reference mask at the first frame (aided sometimes by optical flow or the previous mask). These models, however, are prone to fail under rapid appearance changes or occlusions due to their limitations in modelling the temporal component. On the other hand, very recently, other approaches learned long-term features using a convolutional LSTM to leverage the information from all previous video frames. Even though these models achieve better temporal representations, they still have to be fine-tuned for every new video sequence. In this paper, we present an intermediate solution and devise a novel GAN architecture, FaSTGAN, to learn spatio-temporal object models over finite temporal windows. To achieve this, we concentrate all the heavy computational load to the training phase with two critics that enforce spatial and temporal mask consistency over the last K frames. Then at test time, we only use a relatively light regressor, which reduces the inference time considerably. As a result, our approach combines a high resiliency to sudden geometric and photometric object changes with efficiency at test time (no need for fine-tuning nor post-processing). We demonstrate that the accuracy of our method is on par with state-of-the-art techniques on the challenging YouTube-VOS and DAVIS datasets, while running at 32 fps, about 4x faster than the closest competitor.</p>
+            </div>
+            <div style="display: none;" class="bibtex" id="/publications/CaellesFaSTGAN2019/bib">
+              <pre>@article{caelles2019fast,
+              title={Fast video object segmentation with Spatio-Temporal GANs},
+              author={Caelles, Sergi and Pumarola, Albert and Moreno-Noguer, Francesc and Sanfeliu, Alberto and Van Gool, Luc},
+              journal={arXiv preprint arXiv:1903.12161},
+              year={2019}<br>
+            }</pre>
+            </div>
+          </li>
+        </ul>
+    
+
+        <div id="content">
+          <div lang="en">
+            <h2 id="model">Acknowledgments</h2>
+            <p>This work is partially supported by the Spanish Ministry of Economy and Competitiveness under projects HuMoUR TIN2017-90086-R, ColRobTransp DPI2016-78957 and Mar\'ia de Maeztu Seal of Excellence MDM-2016-0656; by the EU project AEROARMS ICT-2014-1-644271; and by the Grant R01-DC- 014498 of the National Institute of Health. We also thank Nvidia for hardware donation under the GPU Grant Program. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>  
+      
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script> 
+  <script>
+  window.jQuery || document.write('<script src="../../../jquery.js"><\/script>')
+  </script> 
+  <script type="text/javascript" src="../../../site.js">
+  </script> 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90616851-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+</body>
+</html>
