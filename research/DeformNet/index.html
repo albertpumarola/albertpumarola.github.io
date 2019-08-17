@@ -40,6 +40,11 @@
             <h2 id="method"><a name="method">Method</a></h2>
                 <center><img src="../../../images/2018/DeformNet/model.png" height="310" width="1000" alt="DeformNet"></center>
               <p> We have devised model with three  branches, each responsible of reasoning about a different geometric aspect of the problem. The first two branches are arranged in parallel and perform probabilistic 2D detection of the mesh in the image plane and depth estimation (red and green regions in the figure, respectively). These two branches are then merged (blue region in the figure) in order to lift the 2D detections to 3D space, such that the estimated surface correctly re-projects onto the input image and it is properly aligned with the ground truth shape. In the results section we will show that reasoning in such a structured way provides much better results than trying to directly regress the shape from the input image, despite using considerably deeper networks. </p>
+            <h2 id="method"><a name="method">Dataset</a></h2>
+              <center><a href="https://www.dropbox.com/s/i5gebsdg03otdq1/DeepCloth2.tar.xz?dl=0" target="_blank"><img src="../../../images/2018/DeformNet/dataset.png" alt="DeformNet"></a></center>
+              <p>We have synthesized produced a photo-realistic dataset of pairs input 2D-image/3D-shape accounting for different levels of deformations, type of texture, material properties, viewpoints, lighting conditions and occlusion. If you find this dataset useful for your work cite this paper. <bi>Coordinates represent u,v,z with f = 600.172</bi>.</p>
+              <center><div><a class="datasetbutton" href="https://www.dropbox.com/s/i5gebsdg03otdq1/DeepCloth2.tar.xz?dl=0" target="_blank">3D Cloth Dataset</a></div></center>
+              
             <h2 id="model"><a name="video">Spotlight Video</a></h2>
             <center>
                <div class="videocontainer">

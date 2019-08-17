@@ -126,6 +126,10 @@ img.thumb {
     min-width: 100px
 }
 
+#project img.teaser {
+    max-width: 100%
+}
+
 .alert {
     background: #f2f2f2;
     border-style: dashed;
@@ -717,7 +721,10 @@ div.langflag img {
 }
 
 .publist > li {
-    margin: 10px
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .publist ul.pub {
@@ -1377,4 +1384,58 @@ div.picwrapper {
 div.pic {
     /* remove float:left here */
     display: inline-block;
+}
+
+
+/* button 3dpeople dataset: http://buttonoptimizer.com/ */
+.datasetbutton {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 1px solid #2662ae;
+    border-radius: 8px;
+    background: #3ea0ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3ea0ff), to(#2662ae));
+    background: -moz-linear-gradient(top, #3ea0ff, #2662ae);
+    background: linear-gradient(to bottom, #3ea0ff, #2662ae);
+    -webkit-box-shadow: #3a94ff 0px 0px 15px 0px;
+    -moz-box-shadow: #3a94ff 0px 0px 15px 0px;
+    box-shadow: #3a94ff 0px 0px 15px 0px;
+    text-shadow: #183e6d 1px 1px 1px;
+    font: normal normal bold 20px trebuchet ms;
+    color: #ffffff;
+    text-decoration: none;
+}
+.datasetbutton:hover,
+.datasetbutton:focus {
+    border: 1px solid ##307bda;
+    background: #4ac0ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4ac0ff), to(#2e76d1));
+    background: -moz-linear-gradient(top, #4ac0ff, #2e76d1);
+    background: linear-gradient(to bottom, #4ac0ff, #2e76d1);
+    color: #ffffff;
+    text-decoration: none;
+}
+.datasetbutton:active {
+    background: #2662ae;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2662ae), to(#2662ae));
+    background: -moz-linear-gradient(top, #2662ae, #2662ae);
+    background: linear-gradient(to bottom, #2662ae, #2662ae);
+}
+.datasetbutton:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADd0lEQVRIia2VwWtcVRTGf+fNbTNJJhDaOCmCIKmkSdoohfwBYhZdCGORUFxE10KX2pGspLgITcFd/4BACDWLmMS6qBBcuFRQm5hikakQEZvGNDRlkpm8vs/Ffe/lZfJiETyLeWfuPfc753zncI4BATlSXbwHFrwGGjMYFQwB5fh6A1gDloE5EdRuVs7nwWCxgyjrqLq00gdMApcNHIBi4xw9BBaAianK8G8ZnAgIsg64tnA/sCAcB24BJTMDgRCJniALYfEfeaNnwNWwLZz5/NLFJOAojfpjD141mDajdPBUZHUkpPgsoxuUgGnXcNWP7v6UBu1i/CAIwnGDSTPo7xZdJ3MpPVZ2mvBg24hkk4VG4U9gJq1BzPmPZlY61x3xZrlB8+E6bef64HENO/UKfz2P6CgU6Co4zAxJvogZ/ds/An59EiD0DPHG1DvDtaC6eI+4oCXkI28+XGf7iyWi7S34+Q7aWue7J5us7jzNlJkjus9ani7jxidfrQRWXVrtB/1iZg5gpBwxUo6I6rsUOjugWYcT7TQknBkFM46T7x8ZP2z4skoKgUEHGktqIYlw39jdDcA6sTqITgg9lw0O2jNPwv2DWzNzkq44g9EE3IDTPWUG+l/6F5jjZf3BY9ja8Bl4X6NOMGRmaWRmvnC3v/zm0OMLA2e5MHiW7e1HueDd3b2YxQD4TIWGHFCWdKgbJHF7/m5qjMR7717i/EAfxWJnroPkbYv0uCRqJd/YTod/0ovjMujt7SPrQ/E7B2wgO+MPLaXI0m6Jv/FZsVgibzL5NwfxxNebDlgTOmOZ8H26rSD+/EUUJTPKMITWHLBsxltHKErT/W8UJZnHM2zZAXMS1wH3v1IEoWDOCasZWjBjDIm9ZogkPpv48HCEPadeSNFeM8yO8XmhWsuwo1TY3+PtwTKnuzpygY6Tv3fqfH1/g+cn2pH0FLg4VRmupQunurTyATAN0KzvEIVhLlDCQut2M+c42dGV3L8/VRmehYN9QHHXZvba9TLYZFtHV4yWqXqqG1gyWlp03/0T7TRmY9jo0Mr8dG412C1qHLjlR655TuMWS/htXZeGJbRcbacxe70yEmUzPrr0F1dexbgBXAZca6QyYUodhMA8fun/nkdpmkEsARBdu7MSWEQfcAU/cYeAnthmE1gzWBbMCdVuVl6PWrACIPoHD1ilC3bHEHQAAAAASUVORK5CYII=") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+a.datasetbutton:link, a.datasetbutton:visited {
+    color: #ffffff
 }

@@ -37,7 +37,7 @@
         <div id="authors" lang="en">
           <p><a href="https://sergicaelles.com/">Sergi Caelles*</a>, 
               <strong>Albert Pumarola*</strong>, 
-              <a href="http://www.iri.upc.edu/people/fmoreno/">Francesc Moreno-Noguer</a>
+              <a href="http://www.iri.upc.edu/people/fmoreno/">Francesc Moreno-Noguer</a>,
               <a href="http://www.iri.upc.edu/people/sanfeliu/">Alberto Sanfeliu</a>,
               <a href="https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html">Luc Van Gool</a>
               <br><small><i>(*Equally contributed)</i></small>
@@ -71,13 +71,13 @@
         </div>
         <h2><span lang="en">Publications</span></h2>
         <div class="publications">
-        <h3 class="conference"><span lang="en">2018</span></h3>
+        <h3 class="conference"><span lang="en">2019</span></h3>
         <ul class="publist">
      
           <li class="conference">
             <div class="details">
               <a href="https://arxiv.org/abs/1903.12161"><img src=
-              "../../images/2018/GANimation/thumbnail.png" height="194" width="131" alt=
+              "../../images/2019/FaSTGAN/thumbnail.png" height="194" width="131" alt=
               "Fast video object segmentation with Spatio-Temporal GANs" id="FaSTGAN_arxiv" class="thumb"></a>
               <ul class="pub">
                 <li class="pubtitle">Fast video object segmentation with Spatio-Temporal GANs</li>
@@ -86,22 +86,18 @@
                 <li>
                  <div class="list_buttons">
                     <a class="bibtexLink" href="https://arxiv.org/abs/1903.12161" target="_blank">PDF</a>
-                    <a class="bibtexLink" onclick="return toggle('/publications/CaellesFaSTGAN2019/abs',this)"><span lang="en">Abstract</span></a>
                     <a class="bibtexLink" onclick="return toggle('/publications/CaellesFaSTGAN2019/bib',this)">Bibtex</a>
                   </div>
                 </li>
               </ul>
             </div>
-            <div style="display: none;" class="abstractbox" id="/publications/CaellesFaSTGAN2019/abs">
-              <p>Learning descriptive spatio-temporal object models from data is paramount for the task of semi-supervised video object segmentation. Most existing approaches mainly rely on models that estimate the segmentation mask based on a reference mask at the first frame (aided sometimes by optical flow or the previous mask). These models, however, are prone to fail under rapid appearance changes or occlusions due to their limitations in modelling the temporal component. On the other hand, very recently, other approaches learned long-term features using a convolutional LSTM to leverage the information from all previous video frames. Even though these models achieve better temporal representations, they still have to be fine-tuned for every new video sequence. In this paper, we present an intermediate solution and devise a novel GAN architecture, FaSTGAN, to learn spatio-temporal object models over finite temporal windows. To achieve this, we concentrate all the heavy computational load to the training phase with two critics that enforce spatial and temporal mask consistency over the last K frames. Then at test time, we only use a relatively light regressor, which reduces the inference time considerably. As a result, our approach combines a high resiliency to sudden geometric and photometric object changes with efficiency at test time (no need for fine-tuning nor post-processing). We demonstrate that the accuracy of our method is on par with state-of-the-art techniques on the challenging YouTube-VOS and DAVIS datasets, while running at 32 fps, about 4x faster than the closest competitor.</p>
-            </div>
             <div style="display: none;" class="bibtex" id="/publications/CaellesFaSTGAN2019/bib">
               <pre>@article{caelles2019fast,
-              title={Fast video object segmentation with Spatio-Temporal GANs},
-              author={Caelles, Sergi and Pumarola, Albert and Moreno-Noguer, Francesc and Sanfeliu, Alberto and Van Gool, Luc},
-              journal={arXiv preprint arXiv:1903.12161},
-              year={2019}<br>
-            }</pre>
+  title={Fast video object segmentation with Spatio-Temporal GANs},
+  author={Caelles, Sergi and Pumarola, Albert and Moreno-Noguer, Francesc and Sanfeliu, Alberto and Van Gool, Luc},
+  journal={arXiv preprint arXiv:1903.12161},
+  year={2019}
+}</pre>
             </div>
           </li>
         </ul>
@@ -110,7 +106,7 @@
         <div id="content">
           <div lang="en">
             <h2 id="model">Acknowledgments</h2>
-            <p>This work is partially supported by the Spanish Ministry of Economy and Competitiveness under projects HuMoUR TIN2017-90086-R, ColRobTransp DPI2016-78957 and Mar\'ia de Maeztu Seal of Excellence MDM-2016-0656; by the EU project AEROARMS ICT-2014-1-644271; and by the Grant R01-DC- 014498 of the National Institute of Health. We also thank Nvidia for hardware donation under the GPU Grant Program. </p>
+            <p>This work is supported in part by an Amazon Research Award, the Croucher Foundation and the Spanish MiNeCo under projects HuMoUR TIN2017-90086-R, ColRobTransp DPI2016-78957-R  and Mar\'ia de Maeztu Seal of Excellence MDM-2016-0656. We also thank Nvidia for hardware donation under the GPU Grant Program.</p>
           </div>
         </div>
       </div>
