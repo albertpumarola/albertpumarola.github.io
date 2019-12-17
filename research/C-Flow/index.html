@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="keywords" content=
+  "pumarola, albert, deep learning, computer vision, computer graphics, machine learning, artificial intelligence, IRI, normalizing flows, flow-based methods, conditional, conditioning, conditioning normalizing flows, 3d, 3D, reconstruction, image reconstruction, image to image, style transfer, glow, conditional glow">
+  <meta charset="UTF-8">
+  <meta name="description" content=
+  "Flow-based generative models have highly desirable properties like exact log-likelihood evaluation and exact latent-variable inference, however they are still in their infancy and have not received as much attention as alternative generative models. In this paper, we introduce C-Flow, a novel conditioning scheme that brings normalizing flows to an entirely new scenario with great possibilities for multi-modal data modeling. C-Flow is based on a parallel sequence of invertible mappings in which a source flow guides the target flow at every step, enabling fine-grained control over the generation process. We also devise a new strategy to model unordered 3D point clouds that, in combination with the conditioning scheme, makes it possible to address 3D reconstruction from a single image and its inverse problem of rendering an image given a point cloud. We demonstrate our conditioning method to be very adaptable, being also applicable to image manipulation, style transfer and multi-modal image-to-image mapping in a diversity of domains, including RGB images, segmentation maps, and edge masks.">
+  <meta name="author" content="Albert Pumarola">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0074D9">
+  <title>Albert Pumarola - Person-Synthesis</title>
+  <link rel="stylesheet" type="text/css" href="../../../style.css" media="screen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+    
+    
+    
+<body>
+  <div id="page">
+    <div id="menubar">
+      <h2><a href="../../#page" lang="en">Home</a></h2>
+      <h2><a href="../../#publications" lang="en">Publications</a></h2>
+      <h2><a href="../../#projects" lang="en">Projects</a></h2>
+    </div>
+    <div id="main">
+      <h1 lang="en">C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds</h1>
+      <div id="project">
+        <div id="authors" lang="en">
+          <p><strong>Albert Pumarola</strong>, 
+              <a href="http://www.popov.im/index.html">Stefan Popov</a>,
+              <a href="http://www.iri.upc.edu/people/fmoreno/">Francesc Moreno-Noguer</a>
+              <a href="https://ai.google/research/people/105461/">Vittorio Ferrari</a>
+          </p>
+        </div>
+<!--          <center><img src="../../../images/2020/C-Flow/model.png" alt="GANimation"  class="teaser"> </center>-->
+          <p> We introduce a novel conditioning scheme that brings normalizing flows to an entirely new scenario for multi-modal data modeling. We demonstrate our conditioning method to be very adaptable, being applicable to image manipulation, style transfer and multi-modal image-to-image mapping in a diversity of domains, including RGB images, 3D point clouds, segmentation maps, and edge masks. </p>
+          
+        <h3 id="method"><a name="method">3D Reconstruction and Object Image Rendering</a></h3>
+        Results of modeling the conditional distributions:  image→point cloud (3D reconstruction), and point cloud→image (render object image). 
+        <center><img src="../../../images/2020/C-Flow/teaser_rend2.jpg" height="358" width="1000" alt="Image to Image" ></center>
+
+        <h3 id="method"><a name="method">Image-to-Image</a></h3>
+        We also  evaluate image-to-image: segmentation↔streetviews, structure↔facade, map↔aerial, and edges↔shoes. 
+        <center><img src="../../../images/2020/C-Flow/img2img.jpg" height="358" width="700" alt="Image to Image"></center>
+
+        <h3 id="method"><a name="method">Image Content Manipulation</a></h3>
+        We demonstrate the versatility of C-Flow being the first flow-based method capable of performing image content manipulation. Importantly, the model was not retrained for these specific tasks, and we use the same parameters learned to perform segmentation-to-street mapping.
+          <center><img src="../../../images/2020/C-Flow/edit.jpg" width="700" alt="Image Content Edition"></center>
+          
+        <h3 id="method"><a name="method">Style Transfer</a></h3>
+          C-Flow is the first flow-based method capable of performing style transfer. Importantly, the model was not retrained for these specific tasks, and we use the same parameters learned to perform shoes-to-edge and edge-to-shoes mappings.
+        <center><img src="../../../images/2020/C-Flow/style.jpg"  width="700" alt="Style Transfer"></center>
+          
+        <h2 id="method"><a name="method">Method</a></h2>
+        
+        <div lang="en">
+          <p> C-Flow is based on a parallel sequence of invertible mappings in which a source flow guides the target flow at every step, enabling fine-grained control over the generation process.  The model is trained by minimizing $\frac{1}{N}\sum_{i=1}^N \left[-\log p_{\mathbf{\theta},\mathbf{\phi}}(\mathbf{x}^{(i)}_\text{A}, \mathbf{x}^{(i)}_\text{B})
+  + \lambda \left \| \mathbf{x}^{(i)}_\text{B} - \hat{\mathbf{x}}^{(i)}_\text{B} \right \|_1 \right]$</p>
+        </div>
+          <center><img src="../../../images/2020/C-Flow/model.jpg" width="400" alt="GANimation"></center>
+
+        <h2><span lang="en">BibTex</span></h2>
+        <div class="alert" lang="en">
+            @article{pumarola2019cflow,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;title={{C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds}},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;author={Pumarola, Albert and Popov, Stefan and Moreno-Noguer, Francesc and Ferrai, Vittorio},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;booktitle={arXiv preprint arXiv:1912.07009},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;year={2019}<br>
+            }
+        </div>
+        <h2><span lang="en">Publications</span></h2>
+        <div class="publications">
+        <ul class="publist">
+            <li class="article">
+            <div class="details">
+              <a href=" http://arxiv.org/abs/1912.07009" target="_blank"><img src=
+              "../../images/2020/C-Flow/thumbnail.png" height="194" width="131" alt=
+              "C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds" class="thumb"></a>
+              <ul class="pub">
+                <li class="pubtitle">C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds</li>
+                <li class="pubauthor">A. Pumarola, S. Popov, F. Moreno-Noguer and V. Ferrari </li> 
+                <li class="pubbooktitle">arXiv preprint arXiv:1912.07009 </li>                <li>
+                 <div class="list_buttons">
+                    <a class="bibtexLink" href=" http://arxiv.org/abs/1912.07009" target="_blank">PDF</a>
+                    <a class="bibtexLink" onclick="return toggle('/publications/PumarolaCflow2020/bib',this)">Bibtex</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div style="display: none;" class="bibtex" id="/publications/PumarolaCflow2020/bib">
+              <pre>@article{pumarola2019cflow,
+  title={{C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds}},
+  author={Pumarola, Albert and Popov, Stefan and Moreno-Noguer, Francesc and Ferrai, Vittorio},
+  booktitle={arXiv preprint arXiv:1912.07009},
+  year={2019}
+}</pre>
+            </div>
+          </li>
+        </ul>
+        
+
+       
+      </div>
+    </div>
+  </div>
+  </div>  
+      
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script> 
+  <script>
+  window.jQuery || document.write('<script src="../../../jquery.js"><\/script>')
+  </script> 
+  <script type="text/javascript" src="../../../site.js">
+  </script> 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90616851-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+</body>
+</html>
