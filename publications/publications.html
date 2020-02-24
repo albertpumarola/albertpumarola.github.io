@@ -22,7 +22,7 @@
               <ul class="pub">
                 <li class="pubtitle">C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds</li>
                   <li class="pubauthor">A. Pumarola, S. Popov, F. Moreno-Noguer and V. Ferrari</li> 
-                <li class="pubbooktitle">arXiv preprint arXiv:1912.07009 </li> 
+                <li class="pubbooktitle">Conference in Computer Vision and Pattern Recognition (CVPR), 2020. </li> 
                 <li>
                  <div class="list_buttons">
                     <a class="bibtexLink" href="../research/C-Flow/index.html" >Project Page</a>
@@ -37,6 +37,37 @@
   title={{C-Flow: Conditional Generative Flow Models for Images and 3D Point Clouds}},
   author={Pumarola, Albert and Popov, Stefan and Moreno-Noguer, Francesc and Ferrai, Vittorio},
   booktitle={arXiv preprint arXiv:1912.07009},
+  year={2019}
+}</pre>
+            </div>
+          </li>
+        <li class="conference">
+            <div class="details" onmouseenter="document.getElementById('context_19').src='../../images/2019/ContextPred/context_pred_small.gif';" onmouseleave="document.getElementById('context_19').src='../../images/2019/ContextPred/context_pred_small.png';">
+              <a href="https://arxiv.org/abs/1904.03419"  target="_blank"><img src=
+              "../../images/2019/ContextPred/context_pred_small.png" height="100" width="100" alt=
+              "Context-aware Human Motion Prediction" id="context_19" class="thumb"></a>
+              <ul class="pub">
+                <li class="pubtitle">Context-aware Human Motion Prediction</li>
+                <li class="pubauthor">E. Corona, A. Pumarola, G. Alenyà, F. Moreno-Noguer </li>
+                <li class="pubbooktitle">Conference in Computer Vision and Pattern Recognition (CVPR), 2020.</li>
+                <li>
+                  <div class="list_buttons">
+                    <a class="bibtexLink" href="https://arxiv.org/abs/1904.03419" target="_blank">PDF</a>
+<!--                    <a class="bibtexLink" onclick="return toggle('/publications/CoronaContextArxiv19/abs',this)"><span lang="en">Abstract</span></a>-->
+                    <a class="bibtexLink" onclick="return toggle('/publications/CoronaContextArxiv19/bib',this)">Bibtex</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div style="display: none;" class="abstractbox" id="/publications/CoronaContextArxiv19/abs">
+              <p>The problem of predicting human motion given a sequence of past observations is at the core of many applications in robotics and computer vision. Current state-of-the-art formulate this problem as a sequence-to-sequence task, in which a historical of 3D skeletons feeds a Recurrent Neural Network (RNN) that predicts future movements, typically in the order of 1 to 2 seconds. However, one aspect that has been obviated so far, is the fact that human motion is inherently driven by interactions with objects and/or other humans in the environment. 
+                In this paper, we explore this scenario using a novel context-aware motion prediction architecture. We use a semantic-graph model where the nodes parameterize the human and objects in the scene and the edges their mutual interactions. These interactions are iteratively learned through a graph attention layer, fed with the past observations, which now include both object and human body motions. Once this semantic graph is learned, we inject it to a standard RNN to predict future movements of the human/s and object/s. We consider two variants of our architecture, either freezing the contextual interactions in the future of updating them. A thorough evaluation in the "Whole-Body Human Motion Database" shows that in both cases, our context-aware networks clearly outperform baselines in which the context information is not considered.</p>
+            </div>
+            <div style="display: none;" class="bibtex" id="/publications/CoronaContextArxiv19/bib">
+              <pre>@article{corona2019context,
+  title={Context-aware Human Motion Prediction},
+  author={Corona, Enric and Pumarola, Albert and Aleny{\`a}, Guillem and Moreno-Noguer, Francesc},
+  journal={arXiv preprint arXiv:1904.03419},
   year={2019}
 }</pre>
             </div>
@@ -137,37 +168,7 @@
 }</pre>
             </div>
           </li>
-          <li class="conference">
-            <div class="details" onmouseenter="document.getElementById('context_19').src='../../images/2019/ContextPred/context_pred_small.gif';" onmouseleave="document.getElementById('context_19').src='../../images/2019/ContextPred/context_pred_small.png';">
-              <a href="https://arxiv.org/abs/1904.03419"  target="_blank"><img src=
-              "../../images/2019/ContextPred/context_pred_small.png" height="100" width="100" alt=
-              "Context-aware Human Motion Prediction" id="context_19" class="thumb"></a>
-              <ul class="pub">
-                <li class="pubtitle">Context-aware Human Motion Prediction</li>
-                <li class="pubauthor">E. Corona, A. Pumarola, G. Alenyà, F. Moreno-Noguer </li>
-                <li class="pubbooktitle">arXiv preprint arXiv:1904.03419, 2019.</li>
-                <li>
-                  <div class="list_buttons">
-                    <a class="bibtexLink" href="https://arxiv.org/abs/1904.03419" target="_blank">PDF</a>
-<!--                    <a class="bibtexLink" onclick="return toggle('/publications/CoronaContextArxiv19/abs',this)"><span lang="en">Abstract</span></a>-->
-                    <a class="bibtexLink" onclick="return toggle('/publications/CoronaContextArxiv19/bib',this)">Bibtex</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div style="display: none;" class="abstractbox" id="/publications/CoronaContextArxiv19/abs">
-              <p>The problem of predicting human motion given a sequence of past observations is at the core of many applications in robotics and computer vision. Current state-of-the-art formulate this problem as a sequence-to-sequence task, in which a historical of 3D skeletons feeds a Recurrent Neural Network (RNN) that predicts future movements, typically in the order of 1 to 2 seconds. However, one aspect that has been obviated so far, is the fact that human motion is inherently driven by interactions with objects and/or other humans in the environment. 
-                In this paper, we explore this scenario using a novel context-aware motion prediction architecture. We use a semantic-graph model where the nodes parameterize the human and objects in the scene and the edges their mutual interactions. These interactions are iteratively learned through a graph attention layer, fed with the past observations, which now include both object and human body motions. Once this semantic graph is learned, we inject it to a standard RNN to predict future movements of the human/s and object/s. We consider two variants of our architecture, either freezing the contextual interactions in the future of updating them. A thorough evaluation in the "Whole-Body Human Motion Database" shows that in both cases, our context-aware networks clearly outperform baselines in which the context information is not considered.</p>
-            </div>
-            <div style="display: none;" class="bibtex" id="/publications/CoronaContextArxiv19/bib">
-              <pre>@article{corona2019context,
-  title={Context-aware Human Motion Prediction},
-  author={Corona, Enric and Pumarola, Albert and Aleny{\`a}, Guillem and Moreno-Noguer, Francesc},
-  journal={arXiv preprint arXiv:1904.03419},
-  year={2019}
-}</pre>
-            </div>
-          </li>
+          
           <li class="chapter">
             <div class="details" onmouseenter="document.getElementById('releativeloc_springer').src='../../images/2019/RelativeLoc/pl-slam_small.gif';" onmouseleave="document.getElementById('releativeloc_springer').src='../../images/2019/RelativeLoc/pl-slam_small.png';">
               <a href="https://link.springer.com/chapter/10.1007/978-3-030-12945-3_17"  target="_blank"><img src=
