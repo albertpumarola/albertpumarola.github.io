@@ -45,7 +45,7 @@ For this purpose we consider time as an additional  input to the system, and spl
       <h1 lang="en">D-NeRF: Neural Radiance Fields for Dynamic Scenes</h1>
       <div id="project">
         <div id="authors" lang="en">
-          <p> <strong>Albert Pumarola</strong>, 
+          <p> <a href="https://www.albertpumarola.com/">Albert Pumarola</a>,
               <a href="https://www.iri.upc.edu/people/ecorona/">Enric Corona</a>,
               <a href="http://virtualhumans.mpi-inf.mpg.de/">Gerard Pons-Moll</a>,
               <a href="http://www.iri.upc.edu/people/fmoreno/">Francesc Moreno-Noguer</a>
@@ -84,7 +84,11 @@ For this purpose we consider time as an additional  input to the system, and spl
           </div>
             
         </div>
-          <center><img src="../../../images/2021/D-NeRF/model.png" alt="3DPeople" class="teaser"> </center>
+          <div class="content">
+            <video id="teaser" autoplay="" muted="" loop="" height="100%">
+              <source src="../../../images/2021/D-NeRF/teaser2.mp4" type="video/mp4">
+            </video>
+          </div>
         <div class="abstract" lang="en">
             <p>  We propose D-NeRF, a method for synthesizing novel views, at an arbitrary point in time, of dynamic scenes with complex non-rigid geometries. We optimize an underlying deformable volumetric function from a sparse set of input monocular views without the need of ground-truth geometry nor multi-view images.</p>
         </div>
@@ -93,6 +97,28 @@ For this purpose we consider time as an additional  input to the system, and spl
                      <iframe width="560" height="315" align="center" src="//www.youtube.com/embed/lSgzmgi2JPw" seamless="" allowfullscreen=""></iframe>
                   </div>  
                </div></center>
+          
+          
+          
+          
+<section class="section">      
+  <div class="container">
+        <h2 class="title is-2 has-text-centered">Model</h2>
+
+    <div class="columns is-centered is-full-width">
+
+      <div class="column">
+        <div class="content">
+        <center><img src="../../../images/2021/D-NeRF/model.png" alt="model"> </center>
+        </div>
+           <p>  The proposed architecture consists of two main blocks: a deformation network $\Psi_t$ mapping all scene deformations to a common canonical configuration; and a canonical network $\Psi_x$ regressing volume density and view-dependent RGB color from every camera ray.</p>
+      </div>
+   
+    </div>
+      </div>
+</section>          
+          
+
           
           
 <section class="section">      
@@ -165,6 +191,7 @@ For this purpose we consider time as an additional  input to the system, and spl
         </div>
       </div>
     </div>
+      </div>
 </section>
 
           
